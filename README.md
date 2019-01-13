@@ -40,15 +40,25 @@ Add extension libraries that we'll need to make development go faster.
 
 ```
 dotnet add .\API\API.csproj package NSwag.AspNetCore
-dotnet add .\EFData\EFData.csproj package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add .\EFData\EFData.csproj package Microsoft.EntityFrameworkCore.SqlServer 
+dotnet add .\EFData\EFData.csproj package Microsoft.EntityFrameworkCore.Design
 dotnet add .\DapperData\DapperData.csproj package Dapper
 ```
 
 This is all done for you if you use this code.  
 
 #### STEP 3:
-Write some code and test performance.
+Write some code.
 
+#### STEP 4: 
+Create the database.
+```
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+```
+
+#### STEP 5:
+Write more code, migrate, test, code, migrate...
 
 #### References:
 

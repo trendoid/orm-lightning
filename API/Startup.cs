@@ -12,6 +12,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using NJsonSchema;
 using NSwag.AspNetCore;
+using EFData;
+using Microsoft.EntityFrameworkCore;
 
 namespace API
 {
@@ -50,6 +52,9 @@ namespace API
                     };
                 };
             });
+
+            services.AddDbContext<LightningContext>
+                (options => options.UseSqlServer(Configuration.GetConnectionString("LightningDatabase")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
