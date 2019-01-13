@@ -19,13 +19,17 @@ Create a new .NET Core Solution
 ```
 dotnet new sln --name Lightning
 dotnet new webapi --name API --output API
+dotnet new classlib --name Data --output Data
 dotnet new classlib --name EFData --output EFData
 dotnet new classlib --name DapperData --output DapperData
 dotnet new mstest --name Tests --output Tests
 dotnet sln add .\API\API.csproj
+dotnet sln add .\Data\Data.csproj
 dotnet sln add .\EFData\EFData.csproj
 dotnet sln add .\DapperData\DapperData.csproj
 dotnet sln add .\Tests\Tests.csproj
+dotnet add .\API\API.csproj reference .\Data\Data.csproj  .\EFData\EFData.csproj  .\DapperData\DapperData.csproj
+dotnet add .\Tests\Tests.csproj reference .\API\API.csproj 
 dotnet restore
 dotnet build Lightning.sln
 ```
@@ -36,11 +40,17 @@ Add extension libraries that we'll need to make development go faster.
 
 ```
 dotnet add .\API\API.csproj package NSwag.AspNetCore
+dotnet add .\EFData\EFData.csproj package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add .\DapperData\DapperData.csproj package Dapper
 ```
 
 This is all done for you if you use this code.  
 
-References:
+#### STEP 3:
+Write some code and test performance.
+
+
+#### References:
 
 .NET Core
 https://docs.microsoft.com/en-us/aspnet/core/getting-started
@@ -48,7 +58,11 @@ https://docs.microsoft.com/en-us/aspnet/core/getting-started
 Swagger with NSwag
 https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-nswag
 
+.NET Core Data Access
+https://blogs.msdn.microsoft.com/dotnet/2016/11/09/net-core-data-access/ 
+
 Entity Framework
 https://docs.microsoft.com/en-us/ef/core/get-started/aspnetcore/new-db
 
 Dapper
+https://github.com/StackExchange/Dapper 

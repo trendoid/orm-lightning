@@ -14,4 +14,10 @@
     <PackageReference Include="NSwag.AspNetCore" Version="12.0.11" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Data\Data.csproj" />
+    <ProjectReference Include="..\EFData\EFData.csproj" />
+    <ProjectReference Include="..\DapperData\DapperData.csproj" />
+  </ItemGroup>
+
 </Project>
