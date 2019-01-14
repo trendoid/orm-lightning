@@ -62,6 +62,16 @@ dotnet ef database update
 #### STEP 5:
 Write more code, migrate, test, code, migrate...
 
+#### STEP 6: 
+Reverse engineer existing database
+```
+cd \EFData
+```
+
+```
+dotnet ef dbcontext scaffold "Server=tcp:localhost;Database=Northwind;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models
+```
+
 #### References:
 
 .NET Core
