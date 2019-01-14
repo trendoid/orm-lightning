@@ -3,7 +3,7 @@
 
 ORM ->  Object Relational Mapping
 
-[SLIDE DECK](API\wwwroot\public\slides.html)
+[SLIDE DECK](https://trendoid.github.io/orm-lightning/)
 
 For this lightning talk we are going to just focus on one stack... .NET Core and SQL.  
 
