@@ -1,0 +1,20 @@
+{
+  "name": "wwwroot",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Aaron Stanley King <trendoid@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/trendoid/orm-lightning",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "reveal.js": "^3.7.0"
+  }
+}

@@ -3,6 +3,8 @@
 
 ORM ->  Object Relational Mapping
 
+[SLIDE DECK](API\wwwroot\public\slides.html)
+
 For this lightning talk we are going to just focus on one stack... .NET Core and SQL.  
 
 There are dozens of other stacks that have ORMs that work with SQL in Javascript, Java, Ruby, Python, etc.
