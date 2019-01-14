@@ -3,7 +3,7 @@
 <head>
     <title>ORMs... can't live with 'em, can't kill 'em</title>
     <link rel="stylesheet" href="components/reveal.js/css/reveal.css">
-    <link rel="stylesheet" href="components/reveal.js/css/theme/league.css">
+    <link rel="stylesheet" href="components/reveal.js/css/theme/white.css">
 </head>
 
 <body>
@@ -12,87 +12,93 @@
             <section data-markdown>
                 <script type="text/template">
                     # ORMs... 
-                    ## can't live with 'em, can't kill 'em
-
-                    [![Women.. can't live with 'em, can't kill 'em.](https://i.ytimg.com/vi_webp/9GQxLtBsWq4/hqdefault.webp)](https://www.youtube.com/watch?v=9GQxLtBsWq4 "Women.. can't live with 'em, can't kill 'em.")
-                </script>
-            </section>
-            <section data-markdown>
-                <script type="text/template">
-                    ## Aaron Stanley King
-
-                    Father, Husband, and Developer
-                    ![family][family]
-
-                    [family]: king.jpg "Family"
-                </script>
-            </section>
-            <section data-markdown>
-                <script type="text/template">
-                    # ORM 
-                    ## Object-relational mapp(er/ing)
-
-                    "technique for converting data between incompatible type systems in object-oriented programming languages."
-                    ![alt text](http://www.electro-tech-online.com/imgcache/2469-rychke2.gif "Complicated")
-                </script>
-            </section>
-            <section data-markdown>
-                <script type="text/template">
-                    # Frameworks
-
-                    >One new framework created every 16 minutes
-
-                    .NET (Entity Framework, nHibernate, Linq2Sql, Dapper), JavaScript (Mongoose, Sequelize), PHP (Doctrine, Propel, ActiveRecord), Python (Storm, Django, SQLAlchemy), Java (Hibernate, who still uses Java?)
-                </script>
-            </section>
-            <section data-markdown>
-                <script type="text/template">
-                    # Problem
-                    ## Database first vs. Code first.
+                    ## they haven't gone away
                     
-                    ![alt text](http://www.hiox.org/resource/5737-Who-Came-First3.jpg "Chicken Or Egg")
-                    
+                    ![alt text](https://media.giphy.com/media/Us7JbfvCPbmCs/giphy.gif)
                 </script>
             </section>
             <section data-markdown>
                 <script type="text/template">
-                    # Code First
-                    ## Class used to generate SQL
+                    ### Aaron Stanley King
+
+                    > Father, Husband, and Developer
                     
-                    ![alt text](codefirst.png "Code First")
-                    
+                    @trendoid
+
+                    trendoid@gmail.com
                 </script>
             </section>
             <section data-markdown>
                 <script type="text/template">
-                    # Database First
-                    ## Table used to generate Class
+                    ### ORM 
+                    #### Object-relational mapp(er/ing)
+
+                    > technique for converting data between incompatible type systems in object-oriented programming languages.
                     
-                    ![alt text](databasefirst.png "Database First")
-                    
-                </script>
-            </section>
-            <section>Demo</section>
-            <section data-markdown>
-                <script type="text/template">
-                    ##Manifesto for Agile Software Development
-
-                    We are uncovering better ways of developing software by doing it and helping others do it. Through this work we have come to value:
-
-                    **Individuals and interactions** over processes and tools
-
-                    **Working software** over comprehensive documentation
-
-                    **Customer collaboration** over contract negotiation
-
-                    **Responding to change** over following a plan
-                    
-                    That is, while there is value in the items on the right, we value the items on the left more.
+                    ![alt text](https://media.giphy.com/media/1X7lr87CVfMMi3OAEq/source.gif)
                 </script>
             </section>
             <section data-markdown>
                 <script type="text/template">
-                    ##Database First
+                    ### Frameworks
+
+                    > One new framework created every 16 minutes
+
+                    ![alt text](https://media.giphy.com/media/rf6xbrw5X5Mo8/giphy.gif)
+
+                    #### .NET (Entity Framework, nHibernate, Linq2Sql, Dapper), JavaScript (Mongoose, Sequelize), PHP (Doctrine, Propel, ActiveRecord), Python (Storm, Django, SQLAlchemy), Java (Hibernate, who still uses Java?)
+                </script>
+            </section>
+            <section data-markdown>
+                <script type="text/template">
+                    ### Problem
+                    #### Database first vs. Code first.
+                    
+                    ![alt text](https://media.giphy.com/media/12xyxAI21Wh85O/giphy.gif)
+                </script>
+            </section>
+            <section>Demo Code First and Database First</section>
+            <section data-markdown>
+                <script type="text/template">
+                    ### Code First
+                    #### Class used to generate SQL
+                    
+                    ![alt text](https://media.giphy.com/media/XsRZfAJn1SVyw/giphy.gif)
+                </script>
+            </section>
+            <section data-markdown>
+                <script type="text/template">
+                    ### Database First
+                    #### Table used to generate Class
+                    
+                    ![alt text](https://media.giphy.com/media/26AHPxxnSw1L9T1rW/giphy.gif)  
+                </script>
+            </section>
+            <section>Demo Migrations and Stored Procedures</section>
+            <section data-markdown>
+                <script type="text/template">
+                    ### Migrations
+
+                    #### Oh crap, we are Agile now!
+
+                    > Releasing often requires a lot of database changes.
+
+                    ![alt text](https://media.giphy.com/media/c4u2gld3Or69i/giphy.gif)
+                </script>
+            </section>
+            <section data-markdown>
+                <script type="text/template">
+                    ### Stored Procedures
+                    
+                    > The DBA did it.
+
+                    #### Stored Procedures in a code first environment aren't that much fun to maintain. 
+                    Don't do it.  Just decide to go execute only and thin out your data layer.
+                </script>
+            </section>
+            <section data-markdown>
+                <script type="text/template">
+                    ### Database First
 
                     - Puts the responsibility on the SQL Developer
                     - Best if 'execute only' practices followed
@@ -103,7 +109,7 @@
             </section>
             <section data-markdown>
                 <script type="text/template">
-                    ##Code First
+                    ### Code First
 
                     - Puts the responsibility on the backend or full-stack developer
                     - Best of TDD practices can be followed
@@ -112,43 +118,14 @@
                     - Diagnosing issues can be a problem
                 </script>
             </section>
-            <section>demos</section>
             <section data-markdown>
                 <script type="text/template">
-                    ##Migrations
-
-                    ###Oh crap, we are Agile now!
-
-                    Releasing often requires a lot of database changes.
-                </script>
-            </section>
-            <section>demos</section>
-            <section data-markdown>
-                <script type="text/template">
-                    ##Stored Procedures
-                    
-                    >The DBA did it.
-
-                    Stored Procedures in a code first environment aren't that much fun to maintain. 
-                    Don't do it.  Just decide to go execute only and thin out your data layer.
-                </script>
-            </section>
-            <section data-markdown>
-                <script type="text/template">
-                    ##Resources
-
-                    - The code is at https://github.com/trendoid/orms
-                    - https://github.com/aspnet/EntityFramework 
-                    - https://github.com/sequelize/sequelize 
-                </script>
-            </section>
-            <section data-markdown>
-                <script type="text/template">
-                    ##Contact Information
+                    ### Resource
 
                     - @trendoid on Twitter
                     - trendoid@gmail.com on Google
-                    - http://aaronstanleyking.com is by Blog
+                    - http://aaronstanleyking.com is my Blog
+                    - The code is at https://github.com/trendoid/orm-lightning 
                 </script>
             </section>
         </div>
@@ -159,26 +136,56 @@
         Reveal.initialize({
             dependencies: [
                 // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
-                { src: 'components/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                {
+                    src: 'components/reveal.js/lib/js/classList.js',
+                    condition: function () {
+                        return !document.body.classList;
+                    }
+                },
 
                 // Interpret Markdown in <section> elements
-                { src: 'components/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                { src: 'components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                {
+                    src: 'components/reveal.js/plugin/markdown/marked.js',
+                    condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: 'components/reveal.js/plugin/markdown/markdown.js',
+                    condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
 
                 // Syntax highlight for <code> elements
-                { src: 'components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                {
+                    src: 'components/reveal.js/plugin/highlight/highlight.js',
+                    async: true,
+                    callback: function () {
+                        hljs.initHighlightingOnLoad();
+                    }
+                },
 
                 // Zoom in and out with Alt+click
-                { src: 'components/reveal.js/plugin/zoom-js/zoom.js', async: true },
+                {
+                    src: 'components/reveal.js/plugin/zoom-js/zoom.js',
+                    async: true
+                },
 
                 // Speaker notes
-                { src: 'components/reveal.js/plugin/notes/notes.js', async: true },
+                {
+                    src: 'components/reveal.js/plugin/notes/notes.js',
+                    async: true
+                },
 
                 // MathJax
-                { src: 'components/reveal.js/plugin/math/math.js', async: true }
+                {
+                    src: 'components/reveal.js/plugin/math/math.js',
+                    async: true
+                }
             ]
         });
-        </script>
+    </script>
 </body>
 
 </html>
