@@ -14,17 +14,23 @@ using NJsonSchema;
 using NSwag.AspNetCore;
 using EFData;
 using Microsoft.EntityFrameworkCore;
+using System.IO;
 
 namespace API
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IHostingEnvironment env)
         {
-            Configuration = configuration;
+            Configuration = new ConfigurationBuilder()
+                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                .AddJsonFile("appsettings.json")
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+                .AddEnvironmentVariables()
+                .Build();
         }
 
-        public IConfiguration Configuration { get; }
+        public IConfiguration Configuration { get; private set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -53,8 +59,12 @@ namespace API
                 };
             });
 
-            services.AddDbContext<LightningContext>
-                (options => options.UseSqlServer(Configuration.GetConnectionString("LightningDatabase")));
+            var connectionString = Configuration.GetConnectionString("LightningDatabase");
+
+            var optionsBuilder = new DbContextOptionsBuilder<LightningContext>();
+            optionsBuilder.UseSqlServer(connectionString);
+
+            services.AddScoped<LightningContext>(_ => new LightningContext(optionsBuilder.Options));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
