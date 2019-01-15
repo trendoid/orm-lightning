@@ -89,3 +89,14 @@ https://docs.microsoft.com/en-us/ef/core/get-started/aspnetcore/new-db
 
 Dapper
 https://github.com/StackExchange/Dapper 
+
+#### Performance:
+
+ASP.NET Benchmarks
+https://github.com/aspnet/benchmarks
+
+Cool Power BI visuals on Performance
+https://aka.ms/aspnet/benchmarks 
+
+Tech Empower
+https://www.techempower.com/benchmarks/#section=data-r17&hw=ph&test=fortune&p=hweg3v-qt65vu-u8f9xc-5m9q&d=b&f=0-0-0-0-0-0-0-1s-74
