@@ -19,12 +19,12 @@ namespace DapperData
 
 		public List<Comment> GetComments(int amount, string sort)
 		{
-			return this._db.Query<Comment>("SELECT TOP " + amount + " [CommentId],[Content],[HecklerId] FROM [Comment] ORDER BY CommentId " + sort).ToList();
+			return this._db.Query<Comment>("SELECT TOP " + amount + " [CommentId],[Content],[HecklerId] FROM [Comments] ORDER BY CommentId " + sort).ToList();
 		}
 
 		public Comment GetSingleComment(int commentId)
 		{
-			return _db.Query<Comment>("SELECT [CommentId],[Content],[HecklerId] FROM [Comment] WHERE CommentId =@CommentId", new { CommentId = commentId }).SingleOrDefault();
+			return _db.Query<Comment>("SELECT [CommentId],[Content],[HecklerId] FROM [Comments] WHERE CommentId =@CommentId", new { CommentId = commentId }).SingleOrDefault();
 		}
 
 		public bool InsertComment(Comment comment)
@@ -42,7 +42,7 @@ namespace DapperData
 
 		public bool DeleteComment(int commentId)
 		{
-			int rowsAffected = this._db.Execute(@"DELETE FROM [Comment] WHERE CommentId = @CommentId",
+			int rowsAffected = this._db.Execute(@"DELETE FROM [Comments] WHERE CommentId = @CommentId",
 				new { CommentId = commentId });
 
 			if (rowsAffected > 0)

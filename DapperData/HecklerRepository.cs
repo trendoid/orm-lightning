@@ -19,12 +19,12 @@ namespace DapperData
 
 		public List<Heckler> GetHecklers(int amount, string sort)
 		{
-			return this._db.Query<Heckler>("SELECT TOP " + amount + " [HecklerId],[Name],[Url],[Comments] FROM [Heckler] ORDER BY HecklerId " + sort).ToList();
+			return this._db.Query<Heckler>("SELECT TOP " + amount + " [HecklerId],[Name],[Url],[Comments] FROM [Hecklers] ORDER BY HecklerId " + sort).ToList();
 		}
 
 		public Heckler GetSingleHeckler(int hecklerId)
 		{
-			return _db.Query<Heckler>("SELECT[HecklerId],[Name],[Url],[Comments] FROM [Heckler] WHERE HecklerId =@HecklerId", new { HecklerId = hecklerId }).SingleOrDefault();
+			return _db.Query<Heckler>("SELECT[HecklerId],[Name],[Url],[Comments] FROM [Hecklers] WHERE HecklerId =@HecklerId", new { HecklerId = hecklerId }).SingleOrDefault();
 		}
 
 		public bool InsertHeckler(Heckler heckler)
@@ -42,7 +42,7 @@ namespace DapperData
 
 		public bool DeleteHeckler(int hecklerId)
 		{
-			int rowsAffected = this._db.Execute(@"DELETE FROM [Heckler] WHERE HecklerId = @HecklerId",
+			int rowsAffected = this._db.Execute(@"DELETE FROM [Hecklers] WHERE HecklerId = @HecklerId",
 				new { HecklerId = hecklerId });
 
 			if (rowsAffected > 0)

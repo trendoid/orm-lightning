@@ -42,6 +42,7 @@ Add extension libraries that we'll need to make development go faster.
 
 ```
 dotnet add .\API\API.csproj package NSwag.AspNetCore
+dotnet add .\Data\Data.csproj package System.Data.SqlClient 
 dotnet add .\EFData\EFData.csproj package Microsoft.EntityFrameworkCore.SqlServer 
 dotnet add .\EFData\EFData.csproj package Microsoft.EntityFrameworkCore.Design
 dotnet add .\DapperData\DapperData.csproj package Dapper
